@@ -11,6 +11,8 @@ calulateAge.addEventListener("click", function(){
 
     let answer = year - getInput;
 
+    showResult.value = "You are " + answer + " years";
+
     console.log(answer);
 
 });
