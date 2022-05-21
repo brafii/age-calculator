@@ -1,5 +1,6 @@
 let calulateAge = document.getElementById("calAge");
 let dob = document.getElementById("dateOfBirth");
+let showResult = document.getElementById("showAge");
 
 const year = 2022;
 
@@ -8,6 +9,8 @@ calulateAge.addEventListener("click", function(){
     let getInput = dob.value;
     dob.value = "";
 
-    console.log(getInput);
+    let answer = year - getInput;
+
+    console.log(answer);
 
 });
