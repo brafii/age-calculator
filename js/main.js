@@ -1,23 +1,15 @@
 let calulateAge = document.getElementById("calAge");
 // let userInput = document.getElementById("dateOfBirth").value;
 // let dob = new Date(userInput);
-let showResult = document.getElementById("showAge");
+
 
 
 calulateAge.addEventListener("click", function(){
 
-    // let getInput = dob.value;
-    // dob.value = "";
-
-    // let answer = year - getInput;
-
-    // showResult.value = "You are " + answer + " years";
-
-    // console.log(answer);
-
     //collect input from HTML form and convert into date format
     var userinput = document.getElementById("dateOfBirth").value;
     var dob = new Date(userinput);
+    let showResult = document.getElementById("showAge");
     
     //check user provide input or not
     if(userinput==null || userinput==''){
@@ -58,10 +50,10 @@ calulateAge.addEventListener("click", function(){
      
     //DOB is greater than today?s date, generate an error: Invalid date  
      if (dob>today) {
-        document.getElementById("result").innerHTML = ("Invalid date input - Please try again!");
+        showResult.value = "Invalid date input - Please try again!";
       }
       else {
-        document.getElementById("result").innerHTML = year_age + " years " + month_age + " months " + day_age + " days"
+        showResult.value = year_age + " years " + month_age + " months " + day_age + " days"
       }
    }
 
