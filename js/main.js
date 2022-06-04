@@ -1,14 +1,10 @@
 let calulateAge = document.getElementById("calAge");
-// let userInput = document.getElementById("dateOfBirth").value;
-// let dob = new Date(userInput);
-
-
 
 calulateAge.addEventListener("click", function(){
 
     //collect input from HTML form and convert into date format
-    var userinput = document.getElementById("dateOfBirth").value;
-    var dob = new Date(userinput);
+    let userinput = document.getElementById("dateOfBirth").value;
+    let dob = new Date(userinput);
     let showResult = document.getElementById("showAge");
     
     //check user provide input or not
@@ -19,34 +15,34 @@ calulateAge.addEventListener("click", function(){
     
     //execute if user entered a date 
     else {
-    //extract and collect only date from date-time string
-    var mdate = userinput.toString();
-    var dobYear = parseInt(mdate.substring(0,4), 10);
-    var dobMonth = parseInt(mdate.substring(5,7), 10);
-    var dobDate = parseInt(mdate.substring(8,10), 10);
-    
-    //get the current date from system
-    var today = new Date();
-    //date string after broking
-    var birthday = new Date(dobYear, dobMonth-1, dobDate);
-    
-    //calculate the difference of dates
-    var diffInMillisecond = today.valueOf() - birthday.valueOf();
-
-    //convert the difference in milliseconds and store in day and year variable        
-    var year_age = Math.floor(diffInMillisecond / 31536000000);
-    var day_age = Math.floor((diffInMillisecond % 31536000000) / 86400000);
-
-    //when birth date and month is same as today's date      
-    if ((today.getMonth() == birthday.getMonth()) && (today.getDate() == birthday.getDate())) {
-            alert("Happy Birthday!");
-        }
+        //extract and collect only date from date-time string
+        let mdate = userinput.toString();
+        let dobYear = parseInt(mdate.substring(0,4), 10);
+        let dobMonth = parseInt(mdate.substring(5,7), 10);
+        let dobDate = parseInt(mdate.substring(8,10), 10);
         
-     var month_age = Math.floor(day_age/30);        
-     day_age = day_age % 30;
+        //get the current date from system
+        let today = new Date();
+        //date string after broking
+        let birthday = new Date(dobYear, dobMonth-1, dobDate);
         
-     var tMnt= (month_age + (year_age*12));
-     var tDays =(tMnt*30) + day_age;
+        //calculate the difference of dates
+        let diffInMillisecond = today.valueOf() - birthday.valueOf();
+
+        //convert the difference in milliseconds and store in day and year variable        
+        let year_age = Math.floor(diffInMillisecond / 31536000000);
+        let day_age = Math.floor((diffInMillisecond % 31536000000) / 86400000);
+
+        //when birth date and month is same as today's date      
+        if ((today.getMonth() == birthday.getMonth()) && (today.getDate() == birthday.getDate())) {
+                alert("Happy Birthday!");
+            }
+            
+        let month_age = Math.floor(day_age/30);        
+        day_age = day_age % 30;
+            
+        let tMnt= (month_age + (year_age*12));
+        let tDays =(tMnt*30) + day_age;
      
     //DOB is greater than today?s date, generate an error: Invalid date  
      if (dob>today) {
